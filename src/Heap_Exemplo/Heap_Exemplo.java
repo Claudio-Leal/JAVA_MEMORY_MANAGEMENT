@@ -1,8 +1,3 @@
-/*
- * printList exige a criação do método,...que foi criado automaticamente.
- * Apenas troquei o modificador private para public.  
- */
-
 package Heap_Exemplo;
 
 import java.util.ArrayList;
@@ -16,9 +11,12 @@ public class Heap_Exemplo {
 		minhaLista.add("Dois");
 		minhaLista.add("Três");
 		minhaLista.add("Quatro");
-		printList (minhaLista);		
-	}
-	public static void printList(List<String> dados) {
-		System.out.println(dados);		
-	}
+		// chamada do método printlist, passando a lista "minhaLista" como parãmetro.  
+		imprimirLista (minhaLista);		
+	}	
+	// método imprimirLista criado. 
+	// detalhes na imagem em pullrequest.  
+	public static void imprimirLista (List<String> dados) {
+		System.out.println(dados);
+	}	
 }
