@@ -8,7 +8,7 @@ public class Main {
 		System.out.println("Este é o novo valor de localValue: " + newValue + "!");
 	}
 	public static int calculate (int calcValue) {	
-		calcValue = calcValue * 100;
+		calcValue = calcValue * 200;
 		return calcValue;
 	}
 }
