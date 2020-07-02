@@ -44,6 +44,9 @@
  * 
  * Dúvidas:
  * Porque newInitial não passou para "z"?
+ * Por conta disso:
+ *  newInitial.toLowerCase(): somente cria o objeto String "z" em HEAP. Não gera a referência entre newInitial e o objeto String "z".  
+	newInitial = newInitial.toLowerCase(): aqui sim, o objeto está sendo criado e a referência está sendo criada. 
  * 
  * --------------------------------
  * 
@@ -71,17 +74,19 @@ public class Main {
 		Container container = new Container();
 		container.setInitial("C");
 		another(container,last);
-		System.out.println("Execução 3 - getInitial na 1º instância de Container (container) = " + container.getInitial());
-		System.out.println("Execução 5 - valor de last = " + last);
+		System.out.println("Execução 5 - getInitial na 1º instância de Container (container) = " + container.getInitial());
+		System.out.println("Execução 6 - valor de last = " + last);
 	}	
 	
 	public void another(Container initialHolder, String newInitial) {
 		newInitial.toLowerCase();
+		System.out.println("Execução 1 - newInitial - somente cria a String z em HEAP = " + newInitial);
+		newInitial = newInitial.toLowerCase();
+		System.out.println("Execução 2 - newInitial - cria a String z em HEAP, assim como a referência com newInitial = " + newInitial);
 		initialHolder.setInitial("B");
 		Container initial2 = new Container();
 		initialHolder=initial2;		
-		System.out.println("Execução 1 - newInitial - recebeu toLowerCase, mas não funcionou = " + newInitial);
-		System.out.println("Execução 2 - getInitial na 2ª instância de Container (initialHolder) = " + initialHolder.getInitial());
+		System.out.println("Execução 3 - getInitial na 2ª instância de Container (initialHolder) = " + initialHolder.getInitial());
 		System.out.println("Execução 4 - getInitial na 3ª instância de Container (initial2) = " + initial2.getInitial());
 	}
 }
