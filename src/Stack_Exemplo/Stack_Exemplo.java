@@ -1,3 +1,7 @@
+/*
+ * Executando novo commit. 
+ */
+
 package Stack_Exemplo;
 
 public class Stack_Exemplo {
