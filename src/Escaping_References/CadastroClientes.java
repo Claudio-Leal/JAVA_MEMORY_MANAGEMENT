@@ -11,6 +11,9 @@
  * 
  * Map está bem relembrado,...estou entendendo o código, mas os problemas com o "valor" do Map,
  * no caso, Clientes, permanece. 
+ * 
+ * 
+ * Lembrando que esta é uma classe, que poderá ser chamada e instanciada através de outra classe. 
  */
 
 package Escaping_References;
@@ -18,23 +21,23 @@ package Escaping_References;
 import java.util.HashMap;
 import java.util.Map;
 
-public class CadastroClientes {			
-	
-			// Objeto: Map.
+public class CadastroClientes {	
+			// Objeto: Map.			 
 			private Map <String, Clientes> registros;
 			
 			
 			
 			// Método construtor.
 			// Aqui, estamos instanciando o Map. 
+			// HashMap implementa Maps. 
 			public CadastroClientes ( ) {
-				this.registros = new HashMap<String, Clientes>();		
+				this.registros = new HashMap<String, Clientes>();	
 			}
 			
 			
 			
 			// Método para adicionar registros (clientes) ao Map. 
-			public void adicionarCliente (Clientes c) {
+			public void adicionarClientes (Clientes c) {
 				this.registros.put(c.getName(), c);
 			}
 				
@@ -42,7 +45,7 @@ public class CadastroClientes {
 				
 			// Método getClientes.
 			// É um método, que possui como retorno um Map.
-			// A ideia aqui é a de que possamos acessar os registros dentro do Map "com iteração". 
+			// A ideia aqui é a de que possamos acessar os registros dentro do Map com iteração for. 
 			public Map <String, Clientes> getClientes() {
 			return this.registros;
 			}			
